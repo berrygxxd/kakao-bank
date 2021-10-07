@@ -1,0 +1,955 @@
+@charset "utf-8";
+
+html {
+	/* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
+	font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+/* 노말라이즈 */
+body,
+ul,
+li,
+h1 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+label[for] {
+	cursor: pointer;
+	user-select: none;
+}
+
+/* 라이브러리 */
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.border-red {
+	border: 4px solid red;
+}
+
+.border-pink {
+	border: 4px solid pink;
+}
+
+.border-blue {
+	border: 4px solid blue;
+}
+
+.border-green {
+	border: 4px solid green;
+}
+
+.border-black {
+	border: 4px solid black;
+}
+
+.border-gold {
+	border: 4px solid gold;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-jc-e {
+	justify-content: flex-end;
+}
+
+.flex-jc-s {
+	justify-content: flex-start;
+}
+
+.flex-jc-c {
+	justify-content: center;
+}
+
+.flex-jc-sb {
+	justify-content: space-between;
+}
+
+.flex-ai-c {
+	align-items: center;
+}
+
+flex-as-c {
+	align-self: center;
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
+}
+
+.height-100p {
+	height: 100%;
+}
+
+.block {
+	display: block;
+}
+
+.con {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.img-box > img {
+	width: 100%;
+	display: block;
+}
+
+.relative {
+	position: relative;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/* cos */
+.con {
+	width: 1080px;
+}
+
+.con-min-width {
+	min-width: 1080px;
+}
+
+::selection {
+	background-color: #fede22;
+}
+
+/* cos lib */
+.ico {
+	background-color: #fff;
+	width: 24px;
+	height: 24px;
+	display: inline;
+	background-image: url(images/img_kabang_210628.png);
+}
+
+.ico-1 {
+	background-position: -341px -292px;
+}
+
+.ico-2 {
+	background-position: -371px -292px;
+}
+
+/* 탑바 시작 */
+body {
+  padding-top: 100px;
+}
+
+.top-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid #afafaf;
+	background-color: #fff;
+  z-index: 100;
+}
+
+/* 탑바 - 로고 */
+.top-bar .logo {
+	padding: 0 20px;
+}
+
+/* 탑바 - 메뉴박스1 */
+.top-bar .menu-box-1 {
+	margin-right: 50px;
+}
+
+.top-bar .menu-box-1 > ul > li > a {
+	font-weight: bold;
+	padding: 0 20px;
+	position: relative;
+}
+
+.top-bar .menu-box-1 ul > li > a:hover {
+	text-decoration: underline;
+}
+
+.top-bar .menu-box-1 > ul > li > a::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	border-top: 2px solid #000;
+	transition: width 0.3s ease;
+}
+
+.top-bar .menu-box-1 > ul > li:hover > a::after {
+	width: 100%;
+}
+
+/* 탑바 - 메뉴박스1 - 2차 메뉴 */
+.top-bar .menu-box-1 > ul > li > div {
+	width: 100%;
+	left: 0;
+	background-color: #fff;
+	position: absolute;
+	display: none;
+	top: calc(100% + 1px);
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+
+.top-bar .menu-box-1 > ul > li:hover > div {
+	display: block;
+}
+
+.top-bar .menu-box-1 > ul > li > div > div > ul > li {
+	width: 20%;
+}
+
+.top-bar .menu-box-1 > ul > li:nth-child(2) > div > div > ul > li {
+	width: 25%;
+}
+
+.top-bar .menu-box-1 > ul > li > div > div > ul > li > a {
+	text-align: center;
+	padding: 30px 0;
+	font-weight: bold;
+}
+
+.top-bar .menu-box-1 > ul > li > div > div > ul > li > ul > li > a {
+	text-align: center;
+	padding: 10px 0;
+}
+
+/* 탑바 - 서류제출 버튼 */
+.top-bar .btn-go-submit {
+	background-color: #fede22;
+	align-self: center;
+	padding: 20px;
+	font-weight: 400;
+	border-radius: 30px;
+}
+
+/* 탑바 끝 */
+
+/* 상단 배너박스1 시작 */
+.top-banner-box-1 {
+	/*background-color: #ffef6b;*/
+	position: relative;
+}
+
+/* 상단 배너박스1 - 배경  */
+.top-banner-box-1 .bg {
+	height: 648px;
+	background-color: #ffef6b;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* 상단 배너박스1 - 텍스트 박스 */
+.top-banner-box-1 .txt-box {
+	position: absolute;
+	top: 130px;
+	left: 0px;
+}
+
+.top-banner-box-1 .txt-box > h1 {
+	font-weight: bold;
+	font-size: 49px;
+	line-height: 65px;
+	color: #333;
+	margin-bottom: 24px;
+}
+
+.top-banner-box-1 .txt-box > h2 {
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 31.2px;
+	color: rgb(0, 0, 0);
+	opacity: 0.7;
+}
+
+.top-banner-box-1 .txt-box .brand-camp-link {
+	text-decoration: underline;
+	font-weight: bold;
+	display: inline-block;
+	margin: 20px 0;
+}
+
+.top-banner-box-1 .txt-box > .btns {
+	margin-top: 40px;
+}
+
+.top-banner-box-1 .txt-box > .btns > li:not(:first-child) {
+	margin-left: 10px;
+}
+
+.top-banner-box-1 .txt-box > .btns > li > a {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+	width: 178px;
+	height: 56px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 12px;
+	font-size: 17px;
+	font-weight: bold;
+	color: #333;
+}
+
+.top-banner-box-1 .txt-box > .btns > li:hover > a {
+	text-decoration: underline;
+}
+
+.top-banner-box-1 .txt-box > .btns > li > a > p {
+	margin-left: 8px;
+}
+
+/* 상단 배너박스1 끝 */
+
+/* 상단 배너박스 타입1 시작 */
+.top-banner-box-type-1 {
+  margin-top: 50px;
+  padding-bottom: 30px;
+	min-height: 500px;
+	display: flex;
+}
+
+.top-banner-box-type-1 > div:first-child {
+	width: 55%;
+	display: flex;
+	align-items: center;
+}
+
+.top-banner-box-type-1 > div:last-child {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+}
+
+.top-banner-box-type-1 .txt-box > h1 {
+	font-size: 40px;
+	line-height: 1.35;
+}
+
+.top-banner-box-type-1 .txt-box > .des {
+	margin-top: 24px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #666;
+}
+
+.top-banner-box-type-1 .txt-box > .btn-box {
+	display: flex;
+	margin-top: 40px;
+}
+
+.top-banner-box-type-1 .txt-box > .btn-box > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f6f6f6;
+	width: 258px;
+	height: 56px;
+	font-size: 16px;
+	color: #333;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.top-banner-box-type-1 .txt-box > .btn-box > a:hover {
+	text-decoration: underline;
+}
+
+.top-banner-box-type-1 .txt-box > .btn-box > a:not(:only-child) {
+	width: 158px;
+}
+
+.top-banner-box-type-1 .txt-box > .btn-box > a:not(:last-child) {
+	margin-right: 5px;
+}
+
+.top-banner-box-type-1-between-pad {
+	height: 20px;
+	background-color: #fafafa;
+}
+
+/* 상단 배너박스 타입1 끝 */
+
+/* 상단 배너박스2 시작 */
+.top-banner-box-2 > div:first-child > * {
+	margin-left: 40px;
+}
+
+.top-banner-box-2 > div:last-child > * {
+	margin-left: 40px;
+}
+
+.top-banner-box-2 .img-box {
+	width: 473px;
+}
+
+/* 상단 배너박스2 끝 */
+
+/* 상단 배너박스3 시작 */
+.top-banner-box-3 > div:first-child > * {
+	margin-left: 70px;
+}
+
+.top-banner-box-3 > div:last-child > * {
+	margin-left: 53px;
+}
+
+.top-banner-box-3 .txt-box > .img-box-1 {
+	margin-top: 30px;
+}
+
+.top-banner-box-3 .txt-box > .img-box-1 > img {
+	width: 440px;
+}
+
+.top-banner-box-3 .img-box {
+	width: 409px;
+}
+
+.top-banner-box-3 .img-box > img {
+	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 1s, opacity 1s;
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+.top-banner-box-3 .img-box.active > img {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* 상단 배너박스3 끝 */
+
+/* 상단 배너박스4 시작 */
+.top-banner-box-4 > div:first-child > * {
+	margin-left: 80px;
+}
+
+.top-banner-box-4 > div:last-child > * {
+	margin-left: 40px;
+}
+
+.top-banner-box-4 .img-box {
+	width: 459px;
+}
+/* 상단 배너박스4 끝 */
+
+/* 상단 배너박스5 시작 */
+.top-banner-box-5 > div:first-child > * {
+	margin-left: 150px;
+}
+
+.top-banner-box-5 > div:last-child > * {
+	margin-right: -5px;
+}
+
+.top-banner-box-5 .img-box {
+	width: 492px;
+}
+/* 상단 배너박스5 끝 */
+
+/* 상단 배너박스6 시작 */
+.top-banner-box-6 > div:first-child > * {
+	margin-left: 90px;
+}
+
+.top-banner-box-6 > div:last-child > * {
+	margin-left: 40px;
+}
+
+.top-banner-box-6-wrap {
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	background-image: url(images/web/home_map.png);
+}
+
+.top-banner-box-6 .img-box {
+	width: 408px;
+}
+
+.top-banner-box-6 .img-box > img {
+	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 1s, opacity 1s;
+	opacity: 0;
+	transform: translateY(100%);
+}
+
+.top-banner-box-6 .img-box.active > img {
+	opacity: 1;
+	transform: translateY(0);
+}
+/* 상단 배너박스6 끝 */
+
+/* 대출박스 시작 */
+.loan-box {
+  position: relative;
+  background-color: #333b58;
+  color: #fff;
+  padding-top: 150px;
+}
+
+.loan-box > .con {
+  position: relative;
+  z-index: 1;
+}
+
+.loan-box > .sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loan-box > .sky > .blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #559cde;
+  transition: height 0.7s;
+}
+
+.loan-box.active > .sky > .blue {
+  height: 0;
+}
+
+.loan-box > .sky {
+  
+}
+
+.loan-box > .sky > .moon {
+  position: absolute;
+  left: calc(50% + 440px);
+  top: 180px;
+  width: 112px;
+  height: 112px;
+  overflow: hidden;
+}
+
+.loan-box > .sky > .moon > .base {
+  width: 110px;
+  height: 110px;
+  background-color: #ffdc00;
+  border-radius: 50%;
+  transition: background-color 0.4s
+}
+
+.loan-box.active > .sky > .moon > .base {
+  background-color: #fff;
+}
+
+.loan-box > .sky > .moon > .shadow {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: top 0.5s 0.3s, left 0.5s 0.3s;
+}
+
+.loan-box.active > .sky > .moon > .shadow {
+  top: -30%;
+  left: -30%;
+  background-color: #333b58;
+}
+
+/* 대출박스 - 별 시작 */
+.loan-box > .sky .ico-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
+.loan-box > .sky .ico-star-1 {
+  top: 30%;
+  left: 10%;
+}
+
+.loan-box > .sky .ico-star-2 {
+  top: 10%;
+  left: 20%;
+}
+
+.loan-box > .sky .ico-star-3 {
+  top: 25%;
+  left: 15%;
+}
+
+.loan-box > .sky .ico-star-4 {
+  top: 40%;
+  right: 15%;
+}
+
+.loan-box > .sky .ico-star-5 {
+  top: 43%;
+  right: 30%;
+}
+
+.loan-box > .sky .ico-star-6 {
+  top: 73%;
+  right: 27%;
+}
+
+.loan-box > .sky .ico-star-7 {
+  top: 65%;
+  left: 22%;
+}
+
+@keyframes glittering {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.loan-box > .sky .ico-star-1 {
+  animation: glittering 2s infinite;
+}
+
+.loan-box > .sky .ico-star-2 {
+  animation: glittering 3s infinite;
+}
+
+.loan-box > .sky .ico-star-3 {
+  animation: glittering 5s infinite;
+}
+
+.loan-box > .sky .ico-star-4 {
+  animation: glittering 2s infinite;
+}
+
+.loan-box > .sky .ico-star-5 {
+  animation: glittering 4s infinite;
+}
+
+.loan-box > .sky .ico-star-6 {
+  animation: glittering 1.8s infinite;
+}
+
+.loan-box > .sky .ico-star-7 {
+  animation: glittering 3.5s infinite;
+}
+/* 대출박스 - 별 끝 */
+
+.loan-box > .con > h1 {
+  font-size: 40px;
+}
+
+.loan-box > .con > .des {
+  font-size: 15px;
+  margin-top: 10px;
+  opacity: 0.6;
+}
+
+.loan-box > .con > .menu-box-1 {
+  margin-top: 20px;
+}
+
+.loan-box > .con > .menu-box-1 > ul > li {
+  margin: 0 3px;
+}
+
+.loan-box > .con > .menu-box-1 > ul > li > a {
+  display: block;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.09);
+  border-radius: 10px;
+}
+
+.loan-box > .con > .menu-box-1 > ul > li:hover > a  {
+  text-decoration: underline;
+}
+
+
+.loan-box > .con > .img-box-1 {
+  margin-top: 20px;
+}
+
+.loan-box > .con > .img-box-1 > img {
+  display: block;
+  width: 429px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 대출박스 끝 */
+
+/* 체크카드박스 시작 */
+.checkcard-box {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.checkcard-box > .con  > h1 {
+  font-size: 40px;
+  line-height: 1.35;
+}
+
+.checkcard-box > .con > .des {
+  margin-top: 24px;
+  font-size: 15px;
+  color: #666;
+}
+
+.checkcard-box .btn-box {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.checkcard-box .btn-box > a {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color: #f6f6f6;
+  width: 258px;
+  height: 56px;
+  font-size: 16px;
+  color: #333;
+  border-radius: 10px;
+}
+
+.checkcard-box .btn-box > a:hover {
+  text-decoration:underline;
+}
+
+.checkcard-box .slider-box-1 {
+  position: relative;
+  width:720px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 70px;
+}
+
+.checkcard-box .slider-box-1 .slick .item {
+  outline:0;
+  transition:transform 0.3s;
+}
+
+.checkcard-box .slider-box-1 .slick .item > .img-box {
+  padding-top:60px;
+  padding-bottom:60px;
+}
+
+.checkcard-box .slider-box-1 .slick .item.slick-center {
+  transform:scale(1.3);
+}
+
+.checkcard-box .slider-box-1 .arrows > .btn-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(100% + 90px);
+  cursor: pointer;
+}
+
+.checkcard-box .slider-box-1 .arrows > .btn-arrow:active {
+  transform: translateY(-45%);
+}
+
+.checkcard-box .slider-box-1 .arrows > .btn-arrow.btn-arrow-right {
+  left: calc(100% + 90px);
+  right: auto;
+}
+
+/* 체크카드박스 끝 */
+
+/* IT기술박스 시작 */
+.itskill-box {
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.itskill-box > .con > h1 {
+  font-size: 40px;
+  line-height: 1.35;
+  color: #111;
+}
+
+.itskill-box > .con > .divider {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  height: 2px;
+}
+
+.itskill-box > .con > .divider::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100%;
+  background-color: #000;
+}
+
+.itskill-box > .con > .info-box {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.itskill-box > .con > .info-box ::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #eee;
+  transform: translateY(122px);
+  z-index: -1;
+}
+
+.itskill-box > .con > .info-box > ul > li {
+  width: 268px;
+}
+
+.itskill-box > .con > .info-box > ul > li.flex-grow-1 {
+  width: auto;
+}
+
+.itskill-box > .con > .info-box > ul > li:nth-child(2) {
+  margin-left: -25px;
+}
+
+.itskill-box > .con > .info-box > ul > li > h1 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.itskill-box > .con > .info-box > ul > li > .des {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+/* IT기술박스 끝 */
+
+/* 하단바 시작 */
+.bottom-bar {
+  background-color: #eee;
+  padding: 37px 0;
+  font-family: '돋음', dotum, sans-serif;
+  font-size: 11px;
+}
+
+.bottom-bar .box-1 {
+  color: #666;
+}
+
+.bottom-bar .box-1 > .menu-box-1 > ul > li:hover > a {
+  text-decoration: underline;
+}
+
+.bottom-bar .box-1 > .menu-box-1 > ul > li. > a {
+  font-weight: bold;
+  color: #000;
+}
+
+.bottom-bar .box-2 {
+  margin-top: 20px;
+  color: #222;
+}
+
+.bottom-bar .box-2 > .overseas-contact {
+  margin-left: 10px;
+}
+
+.bottom-bar .box-2 > .copyright {
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.bottom-bar .box-3 {
+  margin-top: 20px;
+}
+
+.bottom-bar .box-3 > .auth-mark > img {
+  width: 48px;
+}
+
+.bottom-bar .box-3 > .auth-mark > span {
+  margin-left: 5px;
+}
+
+.bottom-bar .box-3 > .auth-mark:hover  > span {
+  text-decoration: underline;
+}
+
+.bottom-bar .box-3 > .menu-box-2 > ul > li {
+  margin-left: 10px;
+}
+
+.bottom-bar .box-3 > .menu-box-2 > ul > li > a {
+  width:30px;
+  height:20px;
+}
+
+.bottom-bar .box-3 > .menu-box-2 > ul > li > a > span {
+  height:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ico-2 {
+  background-image:url(../images/img_kabang_200417.png);
+}
+
+.ico-2.ico-2-facebook {
+  width:10px;
+  background-position:-120px -360px;
+}
+
+.ico-2.ico-2-blog {
+  width:12px;
+  background-position:-140px -360px;
+}
+
+.ico-2.ico-2-naverpost {
+  width:14px;
+  background-position:-389px -360px;
+}
+
+.ico-2.ico-2-youtube {
+  width:23px;
+  background-position:-160px -360px;
+}
+
+/* 하단바 끝 */
