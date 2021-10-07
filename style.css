@@ -928,26 +928,26 @@ body {
   margin-right:auto;
 }
 
-.ico-2 {
+.ico-3 {
   background-image:url(../images/img_kabang_200417.png);
 }
 
-.ico-2.ico-2-facebook {
+.ico-3.ico-3-facebook {
   width:10px;
   background-position:-120px -360px;
 }
 
-.ico-2.ico-2-blog {
+.ico-3.ico-3-blog {
   width:12px;
   background-position:-140px -360px;
 }
 
-.ico-2.ico-2-naverpost {
+.ico-3.ico-3-naverpost {
   width:14px;
   background-position:-389px -360px;
 }
 
-.ico-2.ico-2-youtube {
+.ico-3.ico-3-youtube {
   width:23px;
   background-position:-160px -360px;
 }
